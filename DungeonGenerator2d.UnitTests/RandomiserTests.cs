@@ -1,14 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace DungeonGenerator2d.UnitTests
 {
     public class RandomiserTests
     {
+        [Fact]
+        public void GivenNull_WhenGetNext_ThenArgumentExceptionThrown()
+        {
+            // Arrange
+            var sut = new Randomiser(new RandomiserOptions
+            {
+                Seed = Environment.TickCount,
+            });
+
+            // Act & Assert
+            Assert.ThrowsAny<ArgumentException>(() =>
+            {
+                sut.GetNext(null);
+            });
+        }
+
         [Theory]
         [InlineData(0, 100)]
         [InlineData(-100, 100)]
