@@ -18,7 +18,9 @@ namespace DungeonGenerator2d
                 throw new ArgumentNullException(nameof(intRange));
             }
 
-            return _random.Next(intRange.Min, intRange.Max + 1);
+            return _random.Next(
+                intRange.Min,
+                intRange.Max + 1);
         }
     }
 }

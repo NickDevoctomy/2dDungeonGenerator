@@ -2,8 +2,13 @@
 {
     public class RoomValidator : IRoomValidator
     {
-        public bool Validate(BoardTile[,] room)
+        public bool Validate(BoardTile[,]? room)
         {
+            if(room == null)
+            {
+                throw new System.ArgumentNullException(nameof(room));
+            }
+
             for (int x = 0; x < room.GetLength(0); x++)
             {
                 var run = false;

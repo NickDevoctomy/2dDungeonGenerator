@@ -31,8 +31,8 @@ namespace DungeonGenerator2d.UnitTests
             // Arrange
             var input = await File.ReadAllLinesAsync($"{path}/input.txt");
             var output = await File.ReadAllLinesAsync($"{path}/output.txt");
-            var inputArray = CreateArray(input);
-            var outputArray = CreateArray(output);
+            var inputArray = TestHelpers.CreateArrayFromText(input);
+            var outputArray = TestHelpers.CreateArrayFromText(output);
             var sut = new ArrayTrimmer<object>();
 
             // Act
@@ -42,31 +42,6 @@ namespace DungeonGenerator2d.UnitTests
             Assert.NotNull(outputArray);
             Assert.True(trimmed.GetLength(0) == outputArray?.GetLength(0));
             Assert.True(trimmed.GetLength(1) == outputArray?.GetLength(1));
-        }
-
-        private object[,]? CreateArray(string[]? lines)
-        {
-            if(lines == null)
-            {
-                return null;
-            }
-
-            int rows = lines.Length;
-            int cols = lines[0].Length;
-            var array = new object[cols, rows];
-
-            for (int y = 0; y < lines.Length; y++)
-            {
-                for (int x = 0; x < cols; x++)
-                {
-                    if(lines[y][x] == '1')
-                    {
-                        array[x, y] = new object();
-                    }
-                }
-            }
-
-            return array;
         }
     }
 }

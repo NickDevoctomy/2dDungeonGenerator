@@ -24,7 +24,8 @@ while (more)
 {
     Console.Clear();
     var room = roomGenerator.Generate(options);
-    room.OutputToConsole();
+    var formatted = room.ToFormattedString();
+    Console.WriteLine(formatted);
     Console.WriteLine("More? (y,n)");
     more = Console.ReadKey(true).Key == ConsoleKey.Y;
 }

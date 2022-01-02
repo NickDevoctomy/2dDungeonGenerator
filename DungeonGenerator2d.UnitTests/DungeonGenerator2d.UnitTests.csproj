@@ -8,11 +8,51 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\ArrayTrimmer\6\input.txt" />
+    <None Remove="Data\ArrayTrimmer\6\output.txt" />
+    <None Remove="Data\ArrayTrimmer\5\input.txt" />
+    <None Remove="Data\ArrayTrimmer\5\output.txt" />
+    <None Remove="Data\ArrayTrimmer\4\input.txt" />
+    <None Remove="Data\ArrayTrimmer\4\output.txt" />
+    <None Remove="Data\ArrayTrimmer\3\input.txt" />
+    <None Remove="Data\ArrayTrimmer\3\output.txt" />
+    <None Remove="Data\ArrayTrimmer\2\input.txt" />
+    <None Remove="Data\ArrayTrimmer\2\output.txt" />
     <None Remove="Data\ArrayTrimmer\1\input.txt" />
     <None Remove="Data\ArrayTrimmer\1\output.txt" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Data\ArrayTrimmer\6\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ArrayTrimmer\6\output.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ArrayTrimmer\5\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ArrayTrimmer\5\output.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ArrayTrimmer\4\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ArrayTrimmer\4\output.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ArrayTrimmer\3\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ArrayTrimmer\3\output.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ArrayTrimmer\2\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ArrayTrimmer\2\output.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\ArrayTrimmer\1\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
