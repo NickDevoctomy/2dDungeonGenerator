@@ -20,6 +20,10 @@
     <None Remove="Data\ArrayTrimmer\2\output.txt" />
     <None Remove="Data\ArrayTrimmer\1\input.txt" />
     <None Remove="Data\ArrayTrimmer\1\output.txt" />
+    <None Remove="Data\RoomValidator\valid\1.txt" />
+    <None Remove="Data\RoomValidator\valid\2.txt" />
+    <None Remove="Data\RoomValidator\valid\3.txt" />
+    <None Remove="Data\RoomValidator\valid\4.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -57,6 +61,18 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Data\ArrayTrimmer\1\output.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\RoomValidator\valid\4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\RoomValidator\valid\3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\RoomValidator\valid\2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\RoomValidator\valid\1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
