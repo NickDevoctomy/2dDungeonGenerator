@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", "{7CEFD84D-460C-4056-B740-441FFF43FAA9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonGenerator2d", "DungeonGenerator2d\DungeonGenerator2d.csproj", "{351F0075-76B6-47B7-968F-0A9619B0D741}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CEFD84D-460C-4056-B740-441FFF43FAA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CEFD84D-460C-4056-B740-441FFF43FAA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CEFD84D-460C-4056-B740-441FFF43FAA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CEFD84D-460C-4056-B740-441FFF43FAA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{351F0075-76B6-47B7-968F-0A9619B0D741}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{351F0075-76B6-47B7-968F-0A9619B0D741}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{351F0075-76B6-47B7-968F-0A9619B0D741}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{351F0075-76B6-47B7-968F-0A9619B0D741}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB90839C-EE4E-4FE6-9CA1-D088464ADDBA}
+	EndGlobalSection
+EndGlobal
