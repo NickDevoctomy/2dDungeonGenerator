@@ -6,6 +6,19 @@ namespace DungeonGenerator2d.UnitTests
 {
     public class ArrayTrimmerTests
     {
+        [Fact]
+        public void GivenNull_WhenTrim_ThenArgumentExceptionThrown()
+        {
+            // Arrange
+            var sut = new ArrayTrimmer<object>();
+
+            // Act & Assert
+            Assert.ThrowsAny<System.ArgumentException>(() =>
+            {
+                sut.Trim(null);
+            });
+        }
+
         [Theory]
         [InlineData("Data/ArrayTrimmer/1")]
         [InlineData("Data/ArrayTrimmer/2")]
