@@ -2,8 +2,13 @@
 {
     public class ArrayTrimmer<T> : IArrayTrimmer<T>
     {
-        public T[,] Trim(T[,] array)
+        public T[,] Trim(T[,]? array)
         {
+            if(array == null)
+            {
+                throw new System.ArgumentNullException(nameof(array));
+            }
+
             int bottomTrim = 0;
             int topTrim = 0;
             int startRow = 0;

@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonGenerator2d", "DungeonGenerator2d\DungeonGenerator2d.csproj", "{351F0075-76B6-47B7-968F-0A9619B0D741}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D78D30DB-88EF-4FF1-B402-BFC9CD4F5928}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonGenerator2d.UnitTests", "DungeonGenerator2d.UnitTests\DungeonGenerator2d.UnitTests.csproj", "{A64C6848-D84B-4E1E-A145-455F3E3FDA7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,9 +25,16 @@ Global
 		{351F0075-76B6-47B7-968F-0A9619B0D741}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{351F0075-76B6-47B7-968F-0A9619B0D741}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{351F0075-76B6-47B7-968F-0A9619B0D741}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A64C6848-D84B-4E1E-A145-455F3E3FDA7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A64C6848-D84B-4E1E-A145-455F3E3FDA7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A64C6848-D84B-4E1E-A145-455F3E3FDA7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A64C6848-D84B-4E1E-A145-455F3E3FDA7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A64C6848-D84B-4E1E-A145-455F3E3FDA7B} = {D78D30DB-88EF-4FF1-B402-BFC9CD4F5928}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EB90839C-EE4E-4FE6-9CA1-D088464ADDBA}
