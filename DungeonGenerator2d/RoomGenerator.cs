@@ -62,7 +62,8 @@
                 var doorInserterOptions = new DoorInserterOptions
                 {
                     Count = options.DoorCount,
-                    Size = options.DoorSize
+                    Size = options.DoorSize,
+                    MandatoryDoor = options.MandatoryDoor
                 };
                 var doorCount = _doorInserter.Insert(trimmedRoom, doorInserterOptions);
                 roomValid = (doorCount > 0);

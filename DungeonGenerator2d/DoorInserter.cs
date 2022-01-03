@@ -21,10 +21,17 @@ namespace DungeonGenerator2d
             DoorInserterOptions options)
         {
             var doorCount = 0;
+
+            List<Direction> doorDirections = new List<Direction>();
             int doorsToInsert = _randomiser.GetNext(options.Count);
             for (int i = 0; i < doorsToInsert; i++)
             {
                 var direction = _randomiser.GetDirection();
+                if (options.MandatoryDoor.HasValue && !doorDirections.Contains(options.MandatoryDoor.GetValueOrDefault()))
+                {
+                    direction = options.MandatoryDoor.GetValueOrDefault();
+                }
+
                 int size = _randomiser.GetNext(options.Size);
                 var wallPoints = _tilePicker.PickWallPoints(
                     room,
@@ -50,6 +57,11 @@ namespace DungeonGenerator2d
                                 room[curPoint.X, curPoint.Y].TileType = BoardTileType.Door;
                                 room[curPoint.X, curPoint.Y].Direction = direction;
                             });
+                            if(!doorDirections.Contains(direction))
+                            {
+                                doorDirections.Add(direction);
+                            }
+
                             possibleDoorPoints.Clear();
                         }
                         else

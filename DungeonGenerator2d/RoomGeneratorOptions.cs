@@ -9,5 +9,6 @@
         public IntRange? PartHeight { get; set; }
         public IntRange? DoorCount { get; set; }
         public IntRange? DoorSize { get; set; }
+        public Direction? MandatoryDoor { get; set; }
     }
 }
