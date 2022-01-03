@@ -4,17 +4,35 @@ namespace DungeonGenerator2d
 {
     public static class BoardTileExtensions
     {
-        public static string ToFormattedString(this BoardTile[,] board)
+        public static string ToFormattedString(
+            this BoardTile[,] board,
+            bool flip)
         {
             var formatted = new StringBuilder();
-            for (int y = board.GetLength(1) - 1; y >= 0; y--)
+
+            if(flip)
             {
-                for (int x = 0; x < board.GetLength(0); x++)
+                for (int y = board.GetLength(1) - 1; y >= 0; y--)
                 {
-                    formatted.Append(board[x, y] != null ? "[X]" : "[-]");
+                    for (int x = 0; x < board.GetLength(0); x++)
+                    {
+                        formatted.Append(board[x, y] != null ? "[X]" : "[-]");
+                    }
+                    formatted.Append("\r\n");
                 }
-                formatted.Append("\r\n");
             }
+            else
+            {
+                for (int y = 0; y < board.GetLength(1); y++)                                   
+                {
+                    for (int x = 0; x < board.GetLength(0); x++)
+                    {
+                        formatted.Append(board[x, y] != null ? "[X]" : "[-]");
+                    }
+                    formatted.Append("\r\n");
+                }
+            }
+
 
             if(formatted.Length >= 2)
             {

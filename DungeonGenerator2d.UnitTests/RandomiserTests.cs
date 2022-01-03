@@ -40,7 +40,7 @@ namespace DungeonGenerator2d.UnitTests
             var value = sut.GetNext(intRange);
 
             // Assert
-            Assert.True(value > min && value < max);
+            Assert.True(value >= min && value <= max);
         }
 
         [Theory]

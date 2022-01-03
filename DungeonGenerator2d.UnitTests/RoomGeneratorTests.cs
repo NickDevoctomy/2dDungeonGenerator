@@ -14,12 +14,16 @@ namespace DungeonGenerator2d.UnitTests
                 Height = new IntRange(6, 20),
                 Parts = new IntRange(2, 5),
                 PartWidth = new IntRange(3, 5),
-                PartHeight = new IntRange(3, 5)
+                PartHeight = new IntRange(3, 5),
+                DoorCount = new IntRange(1, 5),
+                DoorSize = new IntRange(1, 2)
             };
+            var randomiser = new Randomiser(new RandomiserOptions { Seed = 100 });
             var sut = new RoomGenerator(
-                new Randomiser(new RandomiserOptions { Seed = 100 }),
+                randomiser,
                 new RoomValidator(),
-                new ArrayTrimmer<BoardTile>());
+                new ArrayTrimmer<BoardTile>(),
+                new DoorInserter(randomiser, new TilePicker()));
 
             // Act
             var room = sut.Generate(options);

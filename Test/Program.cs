@@ -8,7 +8,8 @@ var randomiser = new Randomiser(randomiserOptions);
 var roomGenerator = new RoomGenerator(
     randomiser,
     new RoomValidator(),
-    new ArrayTrimmer<BoardTile>());
+    new ArrayTrimmer<BoardTile>(),
+    new DoorInserter(randomiser, new TilePicker()));
 
 var options = new RoomGeneratorOptions
 {
@@ -24,7 +25,7 @@ while (more)
 {
     Console.Clear();
     var room = roomGenerator.Generate(options);
-    var formatted = room.ToFormattedString();
+    var formatted = room.ToFormattedString(false);
     Console.WriteLine(formatted);
     Console.WriteLine("More? (y,n)");
     more = Console.ReadKey(true).Key == ConsoleKey.Y;

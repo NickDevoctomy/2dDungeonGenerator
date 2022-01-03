@@ -7,5 +7,7 @@
         public IntRange? Parts { get; set; }
         public IntRange? PartWidth { get; set; }
         public IntRange? PartHeight { get; set; }
+        public IntRange? DoorCount { get; set; }
+        public IntRange? DoorSize { get; set; }
     }
 }

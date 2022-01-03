@@ -11,6 +11,11 @@ namespace DungeonGenerator2d
             _random = new Random(options.Seed);
         }
 
+        public int GetNext(int minInclusive, int maxExclusive)
+        {
+            return _random.Next(minInclusive, maxExclusive);
+        }
+
         public int GetNext(IntRange? intRange)
         {
             if (intRange == null)
@@ -21,6 +26,13 @@ namespace DungeonGenerator2d
             return _random.Next(
                 intRange.Min,
                 intRange.Max + 1);
+        }
+
+        public Direction GetDirection()
+        {
+            var range = new IntRange((int)Direction.North, (int)Direction.West);
+            var random = GetNext(range);
+            return (Direction)random;
         }
     }
 }

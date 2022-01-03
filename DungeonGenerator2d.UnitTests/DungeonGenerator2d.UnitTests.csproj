@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\ArrayTrimmer\7\input.txt" />
+    <None Remove="Data\ArrayTrimmer\7\output.txt" />
     <None Remove="Data\ArrayTrimmer\6\input.txt" />
     <None Remove="Data\ArrayTrimmer\6\output.txt" />
     <None Remove="Data\ArrayTrimmer\5\input.txt" />
@@ -27,6 +29,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Data\ArrayTrimmer\7\input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\ArrayTrimmer\7\output.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Data\ArrayTrimmer\6\input.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

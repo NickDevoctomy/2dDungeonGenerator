@@ -5,15 +5,18 @@
         private readonly IRandomiser _randomiser;
         private readonly IRoomValidator _roomValidator;
         private readonly IArrayTrimmer<BoardTile> _trimmer;
+        private readonly IDoorInserter _doorInserter;
 
         public RoomGenerator(
             IRandomiser randomiser,
             IRoomValidator roomValidator,
-            IArrayTrimmer<BoardTile> trimmer)
+            IArrayTrimmer<BoardTile> trimmer,
+            IDoorInserter doorInserter)
         {
             _randomiser = randomiser;
             _roomValidator = roomValidator;
             _trimmer = trimmer;
+            _doorInserter = doorInserter;
         }
 
         public BoardTile[,] Generate(RoomGeneratorOptions options)
@@ -52,7 +55,14 @@
             } while (!_roomValidator.Validate(room));
 
             var trimmedRoom = _trimmer.Trim(room);
-            return trimmedRoom;
+            var doorInserterOptions = new DoorInserterOptions
+            {
+                Count = options.DoorCount,
+                Size = options.DoorSize
+                
+            };
+            var roomWithDoors = _doorInserter.Insert(trimmedRoom, doorInserterOptions);
+            return roomWithDoors;
         }
     }
 }

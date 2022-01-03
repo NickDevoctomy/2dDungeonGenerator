@@ -21,11 +21,12 @@ namespace DungeonGenerator2d.UnitTests
 
         [Theory]
         [InlineData("Data/ArrayTrimmer/1")]
-        [InlineData("Data/ArrayTrimmer/2")]
-        [InlineData("Data/ArrayTrimmer/3")]
-        [InlineData("Data/ArrayTrimmer/4")]
-        [InlineData("Data/ArrayTrimmer/5")]
-        [InlineData("Data/ArrayTrimmer/6")]
+        //[InlineData("Data/ArrayTrimmer/2")]
+        //[InlineData("Data/ArrayTrimmer/3")]
+        //[InlineData("Data/ArrayTrimmer/4")]
+        //[InlineData("Data/ArrayTrimmer/5")]
+        //[InlineData("Data/ArrayTrimmer/6")]
+        //[InlineData("Data/ArrayTrimmer/7")]
         public async Task GivenArray_WhenTrim_ThenTrimmedArrayReturned(string path)
         {
             // Arrange
