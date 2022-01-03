@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonGenerator2d", "Dunge
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D78D30DB-88EF-4FF1-B402-BFC9CD4F5928}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonGenerator2d.UnitTests", "DungeonGenerator2d.UnitTests\DungeonGenerator2d.UnitTests.csproj", "{A64C6848-D84B-4E1E-A145-455F3E3FDA7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonGenerator2d.UnitTests", "DungeonGenerator2d.UnitTests\DungeonGenerator2d.UnitTests.csproj", "{A64C6848-D84B-4E1E-A145-455F3E3FDA7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

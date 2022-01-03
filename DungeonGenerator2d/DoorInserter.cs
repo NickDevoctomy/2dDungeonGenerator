@@ -48,6 +48,7 @@ namespace DungeonGenerator2d
                             doorPoints.ForEach(curPoint =>
                             {
                                 room[curPoint.X, curPoint.Y].TileType = BoardTileType.Door;
+                                room[curPoint.X, curPoint.Y].Direction = direction;
                             });
                             possibleDoorPoints.Clear();
                         }
@@ -123,7 +124,7 @@ namespace DungeonGenerator2d
                                 }
                             }
 
-                            if (curPoint.Y < room.GetLength(0) - 1)
+                            if (curPoint.Y < room.GetLength(1) - 1)
                             {
                                 if (room[curPoint.X, curPoint.Y + 1] != null && room[curPoint.X, curPoint.Y + 1].TileType == BoardTileType.Door)
                                 {

@@ -16,7 +16,7 @@ namespace DungeonGenerator2d
                 {
                     for (int x = 0; x < board.GetLength(0); x++)
                     {
-                        formatted.Append(board[x, y] != null ? $"[{(int)board[x, y].TileType}]" : "[-]");
+                        formatted.Append(board[x, y] != null ? $"[{(int)board[x, y].TileType}{GetDirectionInitial(board[x, y])}]" : "[--]");
                     }
                     formatted.Append("\r\n");
                 }
@@ -27,7 +27,7 @@ namespace DungeonGenerator2d
                 {
                     for (int x = 0; x < board.GetLength(0); x++)
                     {
-                        formatted.Append(board[x, y] != null ? $"[{(int)board[x, y].TileType}]" : "[-]");
+                        formatted.Append(board[x, y] != null ? $"[{(int)board[x, y].TileType}{GetDirectionInitial(board[x, y])}]" : "[--]");
                     }
                     formatted.Append("\r\n");
                 }
@@ -40,6 +40,11 @@ namespace DungeonGenerator2d
             }
 
             return formatted.ToString();
+        }
+
+        private static string GetDirectionInitial(this BoardTile boardTile)
+        {
+            return boardTile.Direction == null ? "?" : boardTile.Direction.ToString()[0].ToString();
         }
     }
 }

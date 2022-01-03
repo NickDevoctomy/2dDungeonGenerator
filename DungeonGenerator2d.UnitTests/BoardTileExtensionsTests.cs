@@ -29,10 +29,10 @@ namespace DungeonGenerator2d.UnitTests
 
             // Assert
             Assert.Equal(
-                "[1][-][-]\r\n" +
-                "[1][1][1]\r\n" +
-                "[1][-][1]\r\n" +
-                "[1][1][1]", output);
+                "[1?][--][--]\r\n" +
+                "[1?][1?][1?]\r\n" +
+                "[1?][--][1?]\r\n" +
+                "[1?][1?][1?]", output);
         }
 
         [Fact]
@@ -44,10 +44,10 @@ namespace DungeonGenerator2d.UnitTests
             board[0, 1] = new BoardTile(BoardTileType.Empty, 0, 0);
             board[0, 2] = new BoardTile(BoardTileType.Empty, 0, 0);
             board[0, 3] = new BoardTile(BoardTileType.Empty, 0, 0);
-            board[1, 0] = new BoardTile(BoardTileType.Door, 0, 0);
+            board[1, 0] = new BoardTile(BoardTileType.Door, 0, 0, Direction.North);
             board[1, 2] = new BoardTile(BoardTileType.Empty, 0, 0);
             board[2, 0] = new BoardTile(BoardTileType.Empty, 0, 0);
-            board[2, 1] = new BoardTile(BoardTileType.Door, 0, 0);
+            board[2, 1] = new BoardTile(BoardTileType.Door, 0, 0, Direction.East);
             board[2, 2] = new BoardTile(BoardTileType.Empty, 0, 0);
 
             // Act
@@ -55,10 +55,10 @@ namespace DungeonGenerator2d.UnitTests
 
             // Assert
             Assert.Equal(
-                "[1][2][1]\r\n" +
-                "[1][-][2]\r\n" +
-                "[1][1][1]\r\n" +
-                "[1][-][-]", output);
+                "[1?][2N][1?]\r\n" +
+                "[1?][--][2E]\r\n" +
+                "[1?][1?][1?]\r\n" +
+                "[1?][--][--]", output);
         }
     }
 }
