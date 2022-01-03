@@ -17,7 +17,9 @@ var options = new RoomGeneratorOptions
     Height = new IntRange(5, 10),
     Parts = new IntRange(2, 5),
     PartWidth = new IntRange(3, 5),
-    PartHeight = new IntRange(3, 5)
+    PartHeight = new IntRange(3, 5),
+    DoorSize = new IntRange(1, 2),
+    DoorCount = new IntRange(1, 3)
 };
 
 var more = true;
