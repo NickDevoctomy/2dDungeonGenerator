@@ -16,7 +16,7 @@ namespace DungeonGenerator2d
                 {
                     for (int x = 0; x < board.GetLength(0); x++)
                     {
-                        formatted.Append(board[x, y] != null ? "[X]" : "[-]");
+                        formatted.Append(board[x, y] != null ? $"[{(int)board[x, y].TileType}]" : "[-]");
                     }
                     formatted.Append("\r\n");
                 }
@@ -27,7 +27,7 @@ namespace DungeonGenerator2d
                 {
                     for (int x = 0; x < board.GetLength(0); x++)
                     {
-                        formatted.Append(board[x, y] != null ? "[X]" : "[-]");
+                        formatted.Append(board[x, y] != null ? $"[{(int)board[x, y].TileType}]" : "[-]");
                     }
                     formatted.Append("\r\n");
                 }

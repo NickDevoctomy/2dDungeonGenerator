@@ -5,7 +5,7 @@ namespace DungeonGenerator2d
 {
     public interface IDoorInserter
     {
-        BoardTile[,] Insert(
+        int Insert(
             BoardTile[,] room,
             DoorInserterOptions options);
 

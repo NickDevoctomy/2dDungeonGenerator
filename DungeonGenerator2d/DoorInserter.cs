@@ -16,10 +16,11 @@ namespace DungeonGenerator2d
             _tilePicker = tilePicker;
         }
 
-        public BoardTile[,] Insert(
+        public int Insert(
             BoardTile[,] room,
             DoorInserterOptions options)
         {
+            var doorCount = 0;
             int doorsToInsert = _randomiser.GetNext(options.Count);
             for (int i = 0; i < doorsToInsert; i++)
             {
@@ -33,15 +34,32 @@ namespace DungeonGenerator2d
                     wallPoints,
                     size,
                     direction);
-                var randomDoorPointsIndex = _randomiser.GetNext(0, possibleDoorPoints.Count);
-                var doorPoints = possibleDoorPoints[randomDoorPointsIndex];
-                //foreach(var curPoint in doorPoints)
-                //{
-                //    room[curPoint.X, curPoint.Y].TileType = BoardTileType.Door; 
-                //}
+                if (possibleDoorPoints.Count > 0)
+                {
+                    do
+                    {
+                        var randomDoorPointsIndex = _randomiser.GetNext(0, possibleDoorPoints.Count);
+                        var doorPoints = possibleDoorPoints[randomDoorPointsIndex];
+                        possibleDoorPoints.RemoveAt(randomDoorPointsIndex);
+                        if (!DoorExists(room, doorPoints) &&
+                            !IsNextToExistingDoor(room, doorPoints, direction))
+                        {
+                            doorCount += 1;
+                            doorPoints.ForEach(curPoint =>
+                            {
+                                room[curPoint.X, curPoint.Y].TileType = BoardTileType.Door;
+                            });
+                            possibleDoorPoints.Clear();
+                        }
+                        else
+                        {
+                            //do we retry?
+                        }
+                    } while (possibleDoorPoints.Count > 0);
+                }
             }
 
-            return room;
+            return doorCount;
         }
 
         public bool DoorExists(
@@ -80,7 +98,7 @@ namespace DungeonGenerator2d
                                 }
                             }
 
-                            if (curPoint.X < room.GetLength(0))
+                            if (curPoint.X < room.GetLength(0) - 1)
                             {
                                 if (room[curPoint.X + 1, curPoint.Y] != null && room[curPoint.X + 1, curPoint.Y].TileType == BoardTileType.Door)
                                 {
@@ -105,7 +123,7 @@ namespace DungeonGenerator2d
                                 }
                             }
 
-                            if (curPoint.Y < room.GetLength(0))
+                            if (curPoint.Y < room.GetLength(0) - 1)
                             {
                                 if (room[curPoint.X, curPoint.Y + 1] != null && room[curPoint.X, curPoint.Y + 1].TileType == BoardTileType.Door)
                                 {

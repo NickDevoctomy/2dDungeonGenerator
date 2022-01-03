@@ -61,8 +61,8 @@
                 Size = options.DoorSize
                 
             };
-            var roomWithDoors = _doorInserter.Insert(trimmedRoom, doorInserterOptions);
-            return roomWithDoors;
+            var doorCount = _doorInserter.Insert(trimmedRoom, doorInserterOptions);
+            return trimmedRoom;
         }
     }
 }

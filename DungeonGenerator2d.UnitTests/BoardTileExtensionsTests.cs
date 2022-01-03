@@ -14,25 +14,25 @@ namespace DungeonGenerator2d.UnitTests
         {
             // Arrange
             var board = new BoardTile[3, 4];
-            board[0, 0] = new BoardTile(0, 0);
-            board[0, 1] = new BoardTile(0, 0);
-            board[0, 2] = new BoardTile(0, 0);
-            board[0, 3] = new BoardTile(0, 0);
-            board[1, 0] = new BoardTile(0, 0);
-            board[1, 2] = new BoardTile(0, 0);
-            board[2, 0] = new BoardTile(0, 0);
-            board[2, 1] = new BoardTile(0, 0);
-            board[2, 2] = new BoardTile(0, 0);
+            board[0, 0] = new BoardTile(BoardTileType.Empty, 0, 0);
+            board[0, 1] = new BoardTile(BoardTileType.Empty, 0, 0);
+            board[0, 2] = new BoardTile(BoardTileType.Empty, 0, 0);
+            board[0, 3] = new BoardTile(BoardTileType.Empty, 0, 0);
+            board[1, 0] = new BoardTile(BoardTileType.Empty, 0, 0);
+            board[1, 2] = new BoardTile(BoardTileType.Empty, 0, 0);
+            board[2, 0] = new BoardTile(BoardTileType.Empty, 0, 0);
+            board[2, 1] = new BoardTile(BoardTileType.Empty, 0, 0);
+            board[2, 2] = new BoardTile(BoardTileType.Empty, 0, 0);
 
             // Act
             var output = board.ToFormattedString(true);
 
             // Assert
             Assert.Equal(
-                "[X][-][-]\r\n" +
-                "[X][X][X]\r\n" +
-                "[X][-][X]\r\n" +
-                "[X][X][X]", output);
+                "[1][-][-]\r\n" +
+                "[1][1][1]\r\n" +
+                "[1][-][1]\r\n" +
+                "[1][1][1]", output);
         }
 
         [Fact]
@@ -40,25 +40,25 @@ namespace DungeonGenerator2d.UnitTests
         {
             // Arrange
             var board = new BoardTile[3, 4];
-            board[0, 0] = new BoardTile(0, 0);
-            board[0, 1] = new BoardTile(0, 0);
-            board[0, 2] = new BoardTile(0, 0);
-            board[0, 3] = new BoardTile(0, 0);
-            board[1, 0] = new BoardTile(0, 0);
-            board[1, 2] = new BoardTile(0, 0);
-            board[2, 0] = new BoardTile(0, 0);
-            board[2, 1] = new BoardTile(0, 0);
-            board[2, 2] = new BoardTile(0, 0);
+            board[0, 0] = new BoardTile(BoardTileType.Empty, 0, 0);
+            board[0, 1] = new BoardTile(BoardTileType.Empty, 0, 0);
+            board[0, 2] = new BoardTile(BoardTileType.Empty, 0, 0);
+            board[0, 3] = new BoardTile(BoardTileType.Empty, 0, 0);
+            board[1, 0] = new BoardTile(BoardTileType.Door, 0, 0);
+            board[1, 2] = new BoardTile(BoardTileType.Empty, 0, 0);
+            board[2, 0] = new BoardTile(BoardTileType.Empty, 0, 0);
+            board[2, 1] = new BoardTile(BoardTileType.Door, 0, 0);
+            board[2, 2] = new BoardTile(BoardTileType.Empty, 0, 0);
 
             // Act
             var output = board.ToFormattedString(false);
 
             // Assert
             Assert.Equal(
-                "[X][X][X]\r\n" +
-                "[X][-][X]\r\n" +
-                "[X][X][X]\r\n" +
-                "[X][-][-]", output);
+                "[1][2][1]\r\n" +
+                "[1][-][2]\r\n" +
+                "[1][1][1]\r\n" +
+                "[1][-][-]", output);
         }
     }
 }
