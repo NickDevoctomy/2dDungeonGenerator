@@ -73,10 +73,12 @@ namespace DungeonGenerator2d.UnitTests
         [InlineData(4, 1, Direction.North, true)]
         [InlineData(4, 1, Direction.East, true)]
         [InlineData(4, 4, Direction.East, true)]
-        [InlineData(1, 4, Direction.South, true)]
-        [InlineData(4, 4, Direction.South, true)]
+        [InlineData(1, 5, Direction.East, false)]
+        [InlineData(1, 6, Direction.South, true)]
+        [InlineData(4, 6, Direction.South, true)]
         [InlineData(1, 1, Direction.West, true)]
         [InlineData(1, 4, Direction.West, true)]
+        [InlineData(4, 5, Direction.West, false)]
         public void GivenRoom_AndDoorPoints_AndDirection_WhenIsNextToExistingDoor_ThenCorrectResultReturned(
             int x,
             int y,
@@ -99,6 +101,8 @@ namespace DungeonGenerator2d.UnitTests
                 "-1221-",
                 "-2112-",
                 "-2112-",
+                "-1111-",
+                "-1111-",
                 "-1221-",
                 "------"
             };
