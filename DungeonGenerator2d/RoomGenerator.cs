@@ -21,46 +21,53 @@
 
         public BoardTile[,] Generate(RoomGeneratorOptions options)
         {
-            BoardTile[,] room;
+            var trimmedRoom = default(BoardTile[,]);
+            var roomValid = false;
             do
             {
-                var roomWidth = _randomiser.GetNext(options.Width);
-                var roomHeight = _randomiser.GetNext(options.Height);
-                room = new BoardTile[roomWidth, roomHeight];
-                var roomParts = _randomiser.GetNext(options.Parts);
-                for (var i = 1; i <= roomParts; i++)
+                BoardTile[,] room;
+                do
                 {
-                    var partWidth = _randomiser.GetNext(options.PartWidth);
-                    if (partWidth > roomWidth)
+                    var roomWidth = _randomiser.GetNext(options.Width);
+                    var roomHeight = _randomiser.GetNext(options.Height);
+                    room = new BoardTile[roomWidth, roomHeight];
+                    var roomParts = _randomiser.GetNext(options.Parts);
+                    for (var i = 1; i <= roomParts; i++)
                     {
-                        partWidth = roomWidth;
-                    }
-
-                    var partHeight = _randomiser.GetNext(options.PartHeight);
-                    if (partHeight > roomHeight)
-                    {
-                        partHeight = roomHeight;
-                    }
-
-                    var xPos = _randomiser.GetNext(new IntRange(0, roomWidth - partWidth));
-                    var yPos = _randomiser.GetNext(new IntRange(0, roomHeight - partHeight));
-                    for (int x = xPos; x < xPos + partWidth; x++)
-                    {
-                        for (int y = yPos; y < yPos + partHeight; y++)
+                        var partWidth = _randomiser.GetNext(options.PartWidth);
+                        if (partWidth > roomWidth)
                         {
-                            room[x, y] = new BoardTile(x, y);
+                            partWidth = roomWidth;
+                        }
+
+                        var partHeight = _randomiser.GetNext(options.PartHeight);
+                        if (partHeight > roomHeight)
+                        {
+                            partHeight = roomHeight;
+                        }
+
+                        var xPos = _randomiser.GetNext(new IntRange(0, roomWidth - partWidth));
+                        var yPos = _randomiser.GetNext(new IntRange(0, roomHeight - partHeight));
+                        for (int x = xPos; x < xPos + partWidth; x++)
+                        {
+                            for (int y = yPos; y < yPos + partHeight; y++)
+                            {
+                                room[x, y] = new BoardTile(x, y);
+                            }
                         }
                     }
-                }
-            } while (!_roomValidator.Validate(room));
+                } while (!_roomValidator.Validate(room));
 
-            var trimmedRoom = _trimmer.Trim(room);
-            var doorInserterOptions = new DoorInserterOptions
-            {
-                Count = options.DoorCount,
-                Size = options.DoorSize
-            };
-            var doorCount = _doorInserter.Insert(trimmedRoom, doorInserterOptions);
+                trimmedRoom = _trimmer.Trim(room);
+                var doorInserterOptions = new DoorInserterOptions
+                {
+                    Count = options.DoorCount,
+                    Size = options.DoorSize
+                };
+                var doorCount = _doorInserter.Insert(trimmedRoom, doorInserterOptions);
+                roomValid = (doorCount > 0);
+            } while (!roomValid);
+            
             return trimmedRoom;
         }
     }
